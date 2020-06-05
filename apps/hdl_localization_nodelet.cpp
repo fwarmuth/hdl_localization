@@ -52,7 +52,7 @@ public:
       NODELET_INFO("enable imu-based prediction");
       imu_sub = mt_nh.subscribe("/gpsimu_driver/imu_data", 256, &HdlLocalizationNodelet::imu_callback, this);
     }
-    points_sub = mt_nh.subscribe("/velodyne_points", 5, &HdlLocalizationNodelet::points_callback, this);
+    points_sub = mt_nh.subscribe("/ns2/velodyne_points", 5, &HdlLocalizationNodelet::points_callback, this);
     globalmap_sub = nh.subscribe("/globalmap", 1, &HdlLocalizationNodelet::globalmap_callback, this);
     initialpose_sub = nh.subscribe("/initialpose", 8, &HdlLocalizationNodelet::initialpose_callback, this);
 
